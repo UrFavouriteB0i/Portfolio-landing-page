@@ -5,11 +5,9 @@ Welcome to my personal portfolio website! This repository contains the source co
 ## Table of Contents
 
 - [About Me](#about-me)
-- [Technologies Used](#technologies-used)
-- [Features](#features)
-- [Projects](#projects)
-- [Installation](#installation)
-- [Usage](#usage)
+- [Experience](#technologies-used)
+- [Project](#features)
+- [Involvements](#projects)
 - [Contact](#contact)
 
 ## About Me
