@@ -2,18 +2,30 @@ import React from 'react'
 
 function Hero() {
   return (
-    <div className='grid-cols-1'>
-      <section className='hero container max-w-screen-lg mx-auto pb-5'>
-        <img className='mx-auto' src='./Head picture.png'></img>
+    <div className='flex flex-col items-center text-center py-8 px-14 md:py-12'>
+      <section className='hero container max-w-screen-lg'>
+        <img 
+          className='mx-auto w-40 md:w-60' 
+          src='./Head picture.png'
+          alt='Profile'
+        />
       </section>
       <div>
-        <p className='text-center font-Montblack text-[60px] '>Zhilaan Rusmawan!</p>
-        <p className='text-center font-InterSemi text-[28px] -my-4'>I tinker robot and
-          <span class='bg-clip-text text-transparent bg-gradient-to-r from-purple-900 via-orange-300 via-20% to-white to-50%'> code<img className='inline object-scale-down h-16 w-16 animate-bounce' src='./image1.png'></img></span>
+        <p className='text-center font-Montblack text-[28px] md:text-[40px] lg:text-[60px]'>
+          Zhilaan Rusmawan!
         </p>
-        <p className='text-center font-InterMed text-[20px] my-4'>
-        Passionate digital craftman with a focus on neural network development,
-        <br></br>dedicated to crafting state-of-the-art robotic system.
+        <p className='text-center font-InterSemi text-[18px] md:text-[28px] -my-2'>
+          I tinker robot and
+          <span class='bg-clip-text text-transparent bg-gradient-to-r from-purple-900 via-orange-300 via-20% to-white to-50%'> code
+            <img 
+              className='inline object-scale-down h-16 w-16 animate-bounce' 
+              src='./image1.png'
+            />
+          </span>
+        </p>
+        <p className='text-center font-InterMed text-[20px] text-justify md:text-[18px] md:text-center md:text-balance my-4'>
+          Passionate digital craftman with a focus on neural network development,
+          dedicated to crafting state-of-the-art robotic system.
         </p>
       </div>
       <section className='container pb-10 px-10 mx-0 min-w-full flex flex-col items-center'>
