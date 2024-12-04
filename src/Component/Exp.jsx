@@ -9,14 +9,14 @@ export const Exp = () => {
           DISCOVER NOW
         </h5>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between space-y-4 md:space-y-0 md:space-x-8 pt-6 w-full max-w-3xl">
-          <p className="font-InterBld text-[16px] md:text-[20px] text-center md:text-left">
+          <p className="font-InterBld text-white text-[16px] md:text-[20px] text-center md:text-left">
             PT. Adhikara Wiyasa Ghani/ <span className="font-InterReg">Robotic Engineer</span>
           </p>
-          <p className="font-InterBld text-[14px] md:text-[16px] text-center md:text-right">
+          <p className="font-InterBld text-white text-[14px] md:text-[16px] text-center md:text-right">
             June 2022 - August 2023, Surabaya
           </p>
         </div>
-        <div className="mt-6 font-InterReg text-justify text-[14px] md:text-[16px] lg:text-[18px] leading-relaxed w-full max-w-3xl mx-auto">
+        <div className="mt-6 font-InterReg text-white text-justify text-[14px] md:text-[16px] lg:text-[18px] leading-relaxed w-full max-w-3xl mx-auto">
           When I worked here, I developed Automatic Guided Vehicle (AGV) robot for logistic transport
           within industry’s sites. The program was designed with C++ and C# for its onboard user interface.
           Furthermore, MODBUS Protocols were used to communicate between server station and AGV units to
@@ -31,16 +31,16 @@ export const Exp = () => {
         </div>
         <div className="mt-6 w-full max-w-3xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="font-InterReg text-center rounded-lg shadow-lg ring-1 ring-black/5 bg-gradient-to-br from-purple-900/30 via-orange-400/20 to-white/20 backdrop-blur-sm border border-white/40 p-2">
+            <div className="font-InterReg text-white text-center rounded-lg shadow-lg ring-1 ring-black/5 bg-gradient-to-br from-purple-900/30 via-orange-400/20 to-white/20 backdrop-blur-sm border border-white/40 p-2">
               Python
             </div>
-            <div className="font-InterReg text-center rounded-lg shadow-lg ring-1 ring-black/5 bg-gradient-to-br from-purple-900/30 via-orange-400/20 to-white/20 backdrop-blur-sm border border-white/40 p-2">
+            <div className="font-InterReg text-white text-center rounded-lg shadow-lg ring-1 ring-black/5 bg-gradient-to-br from-purple-900/30 via-orange-400/20 to-white/20 backdrop-blur-sm border border-white/40 p-2">
               Computer Vision
             </div>
-            <div className="font-InterReg text-center rounded-lg shadow-lg ring-1 ring-black/5 bg-gradient-to-br from-purple-900/30 via-orange-400/20 to-white/20 backdrop-blur-sm border border-white/40 p-2">
+            <div className="font-InterReg text-white text-center rounded-lg shadow-lg ring-1 ring-black/5 bg-gradient-to-br from-purple-900/30 via-orange-400/20 to-white/20 backdrop-blur-sm border border-white/40 p-2">
               C++
             </div>
-            <div className="font-InterReg text-center rounded-lg shadow-lg ring-1 ring-black/5 bg-gradient-to-br from-purple-900/30 via-orange-400/20 to-white/20 backdrop-blur-sm border border-white/40 p-2">
+            <div className="font-InterReg text-white text-center rounded-lg shadow-lg ring-1 ring-black/5 bg-gradient-to-br from-purple-900/30 via-orange-400/20 to-white/20 backdrop-blur-sm border border-white/40 p-2">
               C#
             </div>
           </div>

@@ -11,10 +11,10 @@ function Hero() {
         />
       </section>
       <div>
-        <p className='text-center font-Montblack text-[28px] md:text-[40px] lg:text-[60px]'>
+        <p className='text-center text-white font-Montblack text-[28px] md:text-[40px] lg:text-[60px]'>
           Zhilaan Rusmawan!
         </p>
-        <p className='text-center font-InterSemi text-[18px] md:text-[28px] -my-2'>
+        <p className='text-center text-white font-InterSemi text-[18px] md:text-[28px] -my-2'>
           I tinker robot and
           <span class='bg-clip-text text-transparent bg-gradient-to-r from-purple-900 via-orange-300 via-20% to-white to-50%'> code
             <img 
@@ -23,7 +23,7 @@ function Hero() {
             />
           </span>
         </p>
-        <p className='text-center font-InterMed text-[20px] text-justify md:text-[18px] md:text-center md:text-balance my-4'>
+        <p className='text-center text-white font-InterMed text-[20px] text-justify md:text-[18px] md:text-center md:text-balance my-4'>
           Passionate digital craftman with a focus on neural network development,
           dedicated to crafting state-of-the-art robotic system.
         </p>
