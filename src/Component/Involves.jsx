@@ -4,7 +4,7 @@ export const Involves = () => {
   return (
     <div className="mt-20 text-white min-h-screen flex flex-col items-center py-10 px-6">
       {/* Title Section */}
-      <h4>INVOLVEMENTS</h4>
+      <h4 className="text-[28px] font-bold text-white md:text-[40px] lg:text-[52px]">INVOLVEMENTS</h4>
       <h5 className="text-transparent bg-gradient-to-r from-purple-900 from-10% via-orange-300 via-50% to-white to-80%">
         DISCOVER NOW
       </h5>
