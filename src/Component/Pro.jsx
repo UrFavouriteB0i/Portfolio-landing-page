@@ -3,7 +3,7 @@ import React from 'react'
 export const Pro = () => {
   return (
     <div className='pb-10'>
-      <div className='flex flex-col items-center pt-20 xl:px-40 md:px-20 sm:px-0'>
+      <div className='flex flex-col items-center pt-20 px-4 xl:px-40 md:px-20 sm:px-0'>
         <h4>PROJECTS</h4>
         <h5 className='text-transparent bg-clip-text bg-gradient-to-r from-purple-900 from-10% via-orange-300 via-50% to-white to-80%'>DISCOVER NOW</h5>
         

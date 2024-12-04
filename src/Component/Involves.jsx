@@ -4,119 +4,75 @@ export const Involves = () => {
   return (
     <div className="mt-20 text-white min-h-screen flex flex-col items-center py-10 px-6">
       {/* Title Section */}
-        <h4>INVOLVEMENTS</h4>
-        <h5 className='text-transparent bg-gradient-to-r from-purple-900 from-10% via-orange-300 via-50% to-white to-80%'>DISCOVER NOW</h5>
+      <h4>INVOLVEMENTS</h4>
+      <h5 className="text-transparent bg-gradient-to-r from-purple-900 from-10% via-orange-300 via-50% to-white to-80%">
+        DISCOVER NOW
+      </h5>
 
       {/* Content Section */}
       <div className="space-y-10 max-w-3xl">
-        {/* LabLab.ai Hackathon */}
-        <div className=" rounded-lg p-6 flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6">
-          <img
-            src="./image 9.png"
-            alt="Falcon Hackathon"
-            className="object-cover rounded-lg mix-blend-luminosity"
-          />
-          <div className="space-y-2">
-            <h2 className="text-xl font-InterBld">Lablab.ai Hackathon</h2>
-            <p className="text-gray-400 font-InterMed">2024, Worldwide</p>
-            <p className="text-gray-300 font-InterReg">
-              Utilized LLM-Powered using Falcon 180B model to develop medical assistance bot, easing clinician to do
-              patients' e-health record management
-            </p>
-            <div className="flex space-x-2">
-              {["Natural Language Processing", "Reinforcement Learning", "LLM", "NER"].map((tag, index) => (
-                <span
-                  key={index}
-                  className="text-sm text-white px-3 py-1 rounded-full font-Afacad text-center rounded-lg shadow-lg ring-1 ring-black/5 bg-gradient-to-br from-purple-900/30 via-orange-400/20 to-white/20 backdrop-blur-sm border border-white/40'"
-                >
-                  {tag}
-                </span>
-              ))}
+        {/* Hackathons and Events */}
+        {[
+          {
+            imgSrc: "./image 9.png",
+            title: "Lablab.ai Hackathon",
+            location: "2024, Worldwide",
+            description:
+              "Utilized LLM-Powered using Falcon 180B model to develop a medical assistance bot, easing clinician management of patients' e-health records.",
+            tags: ["Natural Language Processing", "Reinforcement Learning", "LLM", "NER"],
+          },
+          {
+            imgSrc: "./image 8.png",
+            title: "Garuda Hacks 5.0",
+            location: "2024, South East Asia",
+            description:
+              "Developed AI-powered social platform prototype that engages MSMEs to achieve balanced economic growth in their respective markets.",
+            tags: ["Reinforcement Learning", "Neural network", "Tensorflow", "Numpy"],
+          },
+          {
+            imgSrc: "./image 6.png",
+            title: "National Aerial Robot Competition (KRTI) / Fixed Wing",
+            location: "2021, Indonesia",
+            description:
+              "Designed and developed an airplane launcher and the 3D model of the fixed-wing model.",
+            tags: ["Inventor", "CAD"],
+          },
+          {
+            imgSrc: "./image 7.png",
+            title: "Shopee National Data Science Challenge",
+            location: "2020, Indonesia",
+            description:
+              "Developed and implemented data classification on Shopee's business cases, including customer segmentation through search history.",
+            tags: ["Exploratory Data Analysis", "scikit-learn", "Pandas"],
+          },
+        ].map((event, index) => (
+          <div
+            key={index}
+            className="rounded-lg p-6 flex flex-col md:flex-row md:items-center md:space-x-6 space-y-4 md:space-y-0"
+          >
+            <img
+              src={event.imgSrc}
+              alt={event.title}
+              className="object-cover rounded-lg mix-blend-luminosity w-full md:w-1/3"
+            />
+            <div className="text-center md:text-left space-y-2 flex-1">
+              <h2 className="text-xl font-InterBld">{event.title}</h2>
+              <p className="text-gray-400 font-InterMed">{event.location}</p>
+              <p className="text-gray-300 font-InterReg">{event.description}</p>
+              <div className="flex flex-wrap justify-center space-x-1 -mx-10 md:justify-start md:space-x-2">
+                {event.tags.map((tag, idx) => (
+                  <span
+                    key={idx}
+                    className="text-sm text-white px-2 py-1 rounded-full font-Afacad text-center rounded-lg shadow-lg ring-1 ring-black/5 bg-gradient-to-br from-purple-900/30 via-orange-400/20 to-white/20 backdrop-blur-sm border border-white/40"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-
-        {/* Garuda Hacks 5.0 */}
-        <div className="rounded-lg p-6 flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6">
-          <img
-            src="./image 8.png"
-            alt="Garuda Hacks"
-            className="object-cover rounded-lg mix-blend-luminosity"
-          />
-          <div className="space-y-2">
-            <h2 className="text-xl font-InterBld">Garuda Hacks 5.0</h2>
-            <p className="text-gray-400 font-InterMed">2024, South East Asia</p>
-            <p className="text-gray-300 font-InterReg">
-              Developed AI-powered social platform prototype that engage with MSME to achieve balance economy growth in
-              their respective market
-            </p>
-            <div className="flex space-x-2">
-              {["Reinforcement Learning", "Neural network", "Tensorflow", "Numpy"].map((tag, index) => (
-                <span
-                  key={index}
-                  className="text-sm text-white px-3 py-1 rounded-full font-Afacad text-center rounded-lg shadow-lg ring-1 ring-black/5 bg-gradient-to-br from-purple-900/30 via-orange-400/20 to-white/20 backdrop-blur-sm border border-white/40'"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* National Aerial Robot Competition */}
-        <div className=" rounded-lg p-6 flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6">
-          <img
-            src="./image 6.png"
-            alt="Fixed Wing Model"
-            className="object-cover rounded-lg mix-blend-luminosity"
-          />
-          <div className="space-y-2">
-            <h2 className="text-2xl font-InterBld">National Aerial Robot Competition (KRTI) / Fixed Wing</h2>
-            <p className="text-gray-400 font-InterMed">2021, Indonesia</p>
-            <p className="text-gray-300 font-InterReg">
-              Designed and developed airplane launcher and the 3D model of the fixed wing model
-            </p>
-            <div className="flex space-x-2">
-              {["Inventor", "CAD"].map((tag, index) => (
-                <span
-                  key={index}
-                  className="text-sm text-white px-3 py-1 rounded-full font-Afacad text-center rounded-lg shadow-lg ring-1 ring-black/5 bg-gradient-to-br from-purple-900/30 via-orange-400/20 to-white/20 backdrop-blur-sm border border-white/40'"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Shopee National Data Science Challenge */}
-        <div className="rounded-lg p-6 flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6">
-          <img
-            src="./image 7.png"
-            alt="Shopee Data Science"
-            className="object-cover rounded-lg mix-blend-luminosity"
-          />
-          <div className="space-y-2">
-            <h2 className="text-2xl font-InterBld">Shopee National Data Science Challenge</h2>
-            <p className="text-gray-400 font-InterMed">2020, Indonesia</p>
-            <p className="text-gray-300 font-InterReg">
-              Developed and implemented data classification on Shopee's business cases including customer segmentation
-              through search history
-            </p>
-            <div className="flex space-x-2">
-              {["Exploratory Data Analysis", "scikit-learn", "Pandas"].map((tag, index) => (
-                <span
-                  key={index}
-                  className="text-sm text-white px-3 py-1 rounded-full font-Afacad text-center rounded-lg shadow-lg ring-1 ring-black/5 bg-gradient-to-br from-purple-900/30 via-orange-400/20 to-white/20 backdrop-blur-sm border border-white/40'"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
-}
-
+};
