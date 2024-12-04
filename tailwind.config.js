@@ -13,7 +13,10 @@ module.exports = {
         InterMed: ['Intermed'],
         InterBld: ['Interbold'],
         InterSemi: ['Intersemi']
-      }
+      },
+      colors:{
+        white: '#FFFFFF',
+      },
     },
   },
   plugins: [],
