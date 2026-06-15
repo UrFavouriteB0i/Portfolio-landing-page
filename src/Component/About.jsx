@@ -3,13 +3,17 @@ import React from 'react';
 export const About = () => {
   return (
     <div className="pb-10">
-      <div className="flex flex-col items-center pt-10 px-10 md:px-0">
-        <h4 className="text-[28px] font-bold text-white md:text-[40px] lg:text-[52px]">ABOUT ME</h4>
-        <h5 className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-purple-900 from-20% via-orange-300 via-50% to-white to-70% md:text-lg">
+      <div className="flex flex-col items-center pt-10 px-4 md:px-10">
+        <h4 className="text-[28px] font-bold text-white md:text-[40px] lg:text-[52px]">
+          ABOUT ME
+        </h4>
+        <h5 className="text-sm font-semibold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-orange-300 to-white md:text-lg">
           DISCOVER NOW
         </h5>
-        <div className="mt-6 rounded-2xl shadow-lg ring-1 ring-black/5 bg-gradient-to-tl from-slate-900/30 to-white/20 backdrop-blur-sm w-full max-w-lg md:max-w-xl lg:max-w-3xl mx-auto">
-          <p className="flex h-auto text-center items-center justify-center font-InterMed text-[14px] text-white/75 p-4 leading-relaxed md:text-[16px] lg:text-[18px] lg:h-[273px]">
+        
+        {/* Glassmorphism Container */}
+        <div className="mt-6 rounded-2xl shadow-xl ring-1 ring-white/10 bg-gradient-to-tl from-slate-900/40 to-white/10 backdrop-blur-md w-full max-w-lg md:max-w-xl lg:max-w-3xl mx-auto overflow-hidden">
+          <p className="text-center font-InterMed text-[14px] text-white/80 p-6 md:p-8 lg:p-10 leading-relaxed md:text-[16px] lg:text-[18px]">
             As an AI engineer, I thrive on the intricate dance between logic
             and creativity. Currently immersed in the ever-evolving world of Artificial
             Intelligence, my expertise centers around Python, JS and C++ where I applied my
