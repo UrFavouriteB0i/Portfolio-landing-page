@@ -1,45 +1,53 @@
-import React from 'react'
+import React from 'react';
 
 function Hero() {
   return (
-    <div className='flex flex-col items-center text-center py-8 px-14 md:py-12'>
-      <section className='hero container max-w-screen-lg'>
+    <div className='flex flex-col items-center text-center py-12 px-6 md:px-14 md:py-20 min-h-[80vh] justify-center'>
+      {/* Profile Image Section */}
+      <section className='hero container max-w-screen-lg mb-6'>
         <img 
-          className='mx-auto w-40 md:w-60' 
+          className='mx-auto w-36 h-36 md:w-48 md:h-48 rounded-full object-cover ring-4 ring-white/10 shadow-2xl' 
           src='./Head picture.png'
-          alt='Profile'
+          alt='Zhilaan Rusmawan'
         />
       </section>
-      <div>
-        <p className='text-center text-white font-Montblack text-[28px] md:text-[40px] lg:text-[60px]'>
-          Zhilaan Rusmawan!
-        </p>
-        <p className='text-center text-white font-InterSemi text-[18px] md:text-[28px] -my-2'>
-          I tinker robot and
-          <span class='bg-clip-text text-transparent bg-gradient-to-r from-purple-900 via-orange-300 via-20% to-white to-50%'> code
+
+      {/* Hero Content */}
+      <div className='max-w-3xl mx-auto'>
+        <h1 className='text-white font-Montblack text-[36px] tracking-tight md:text-[52px] lg:text-[68px] leading-tight'>
+          Zhilaan Rusmawan
+        </h1>
+        
+        <h2 className='text-white font-InterSemi text-[20px] md:text-[32px] lg:text-[38px] mt-2 leading-snug'>
+          I build production AI Agents & autonomous systems that{' '}
+          <span className='inline-flex items-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-orange-300 to-white'>
+            ship
             <img 
-              className='inline object-scale-down h-16 w-16 animate-bounce' 
+              className='inline-block object-contain h-8 w-8 md:h-12 md:w-12 ml-2 animate-bounce' 
               src='./image1.png'
+              alt=''
             />
           </span>
-        </p>
-        <p className='text-center text-white font-InterMed text-[20px] text-justify md:text-[18px] md:text-center md:text-balance my-4'>
-          Passionate digital craftman with a focus on neural network development,
-          dedicated to crafting state-of-the-art robotic system.
+        </h2>
+        
+        <p className='text-white/80 font-InterMed text-[15px] md:text-[17px] lg:text-[19px] text-center text-balance my-6 leading-relaxed max-w-2xl mx-auto'>
+          AI Software Engineer specializing in scalable LLM pipelines, multimodal generation architectures, and high-throughput agentic workflows that drive measurable latency and cost reductions.
         </p>
       </div>
-      <section className='container pb-10 px-10 mx-0 min-w-full flex flex-col items-center'>
+
+      {/* CTA Button Section */}
+      <section className='w-full mt-4 flex justify-center'>
         <a
           href="mailto:zhilaanabdrsyd@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-InterReg hover:text-xl text-center rounded-full w-60 h-14 bg-transparent hover:bg-slate-800 text-white flex items-center justify-center border hover:border-violet-800 transition-all ease-in-out duration-300"
+          className="font-InterReg text-sm md:text-base text-center rounded-full px-10 h-14 bg-white/5 hover:bg-white text-white hover:text-slate-900 flex items-center justify-center border border-white/20 hover:border-white transition-all duration-300 shadow-lg hover:shadow-violet-500/20"
         >
-        Contact me
+          Let's collaborate
         </a>
       </section>
     </div>
-  )
+  );
 }
 
-export default Hero
+export default Hero;
