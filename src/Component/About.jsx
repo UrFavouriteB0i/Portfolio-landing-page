@@ -10,15 +10,16 @@ export const About = () => {
         </h5>
         <div className="mt-6 rounded-2xl shadow-lg ring-1 ring-black/5 bg-gradient-to-tl from-slate-900/30 to-white/20 backdrop-blur-sm w-full max-w-lg md:max-w-xl lg:max-w-3xl mx-auto">
           <p className="flex h-auto text-center items-center justify-center font-InterMed text-[14px] text-white/75 p-4 leading-relaxed md:text-[16px] lg:text-[18px] lg:h-[273px]">
-            As an AI engineer fresh graduate, I thrive on the intricate dance between logic
+            As an AI engineer, I thrive on the intricate dance between logic
             and creativity. Currently immersed in the ever-evolving world of Artificial
-            Intelligence, my expertise centers around Python, where I applied my
+            Intelligence, my expertise centers around Python, JS and C++ where I applied my
             theoretical knowledge and practical skills to cutting-edge technologies.
             <br /><br />
-            With a dream for providing solutions for tomorrow, I eagerly explore the
-            dynamic landscape of robotic system development. My exploration involves
-            translating concepts into code, adapting to new technology, and constantly
-            pushing the boundaries of what’s possible with collaboration.
+            I build AI systems that ship. Over the past 1.5 years as an Applied AI Engineer, 
+            I've designed production LLM pipelines, multimodal generation platforms, and evaluation workflows,
+            reducing latency by 30% and generation costs by 28% on live systems serving thousands of users. 
+            My background spans computer vision, edge inference, and enterprise deployment, 
+            with a consistent focus on making AI reliable and measurable in production.
           </p>
         </div>
       </div>
