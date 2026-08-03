@@ -80,25 +80,6 @@ h1 {
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid;
-  padding: 0.6em 3em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: Afacad;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-  filter: 'drop-shadow-[0_35px_35px_rgba(255,255,255,0.25]';
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 h4 {
   font-family: 'MontserratBlk';
   text-align: center;

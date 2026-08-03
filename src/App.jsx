@@ -3,7 +3,7 @@ import "./App.css";
 import Navbar from "./Component/Header";
 import Hero from "./Component/Hero";
 import Experience from "./Component/Exp";
-// import Work from "./Component/Work";
+import Work from "./Component/Works";
 // import Stack from "./Component/Stack";
 import Footer from "./Component/Footer";
 
@@ -36,10 +36,11 @@ function App() {
         )}
         
         {currentView === "experience" && (
-          <Experience />
+          <Experience chatOpen={chatOpen} setChatOpen={setChatOpen}/>
         )}
-
-        {/* {currentView === "work" && <Work />} */}
+        {currentView === "work" && (
+          <Work chatOpen={chatOpen} setChatOpen={setChatOpen}/>
+        )}
         {/* {currentView === "stack" && <Stack />} */}
       </div>
 
