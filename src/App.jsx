@@ -2,38 +2,46 @@ import { useState } from "react";
 import "./App.css";
 import Navbar from "./Component/Header";
 import Hero from "./Component/Hero";
-// import Experience from "./Component/Experience";
+import Experience from "./Component/Exp";
 // import Work from "./Component/Work";
 // import Stack from "./Component/Stack";
 import Footer from "./Component/Footer";
 
 function App() {
-  /* Chat state lives here so Navbar can toggle it
-     and Hero's ChatPanel can read/close it */
   const [chatOpen, setChatOpen] = useState(false);
+  const [currentView, setCurrentView] = useState("profile");
 
   return (
     <div
       style={{
         background: "#0B0F17",
         minHeight: "100vh",
-        width: "100%",
-        overflowX: "hidden",
+        width: "100vw",
+        display: "flex",
+        flexDirection: "column",
+        position: "relative",
       }}
     >
-      {/* Navbar — fixed, persists across all sections */}
       <Navbar
         onChatToggle={() => setChatOpen((prev) => !prev)}
         chatOpen={chatOpen}
+        currentView={currentView}
+        setCurrentView={setCurrentView}
       />
 
-      {/* Sections */}
-      <Hero chatOpen={chatOpen} setChatOpen={setChatOpen} />
+      {/* Main Content Area */}
+      <div style={{ flex: 1, width: "100%" }}>
+        {currentView === "profile" && (
+          <Hero chatOpen={chatOpen} setChatOpen={setChatOpen} />
+        )}
+        
+        {currentView === "experience" && (
+          <Experience />
+        )}
 
-      {/* Uncomment as you build each section: */}
-      {/* <Experience /> */}
-      {/* <Work /> */}
-      {/* <Stack /> */}
+        {/* {currentView === "work" && <Work />} */}
+        {/* {currentView === "stack" && <Stack />} */}
+      </div>
 
       <Footer />
     </div>
