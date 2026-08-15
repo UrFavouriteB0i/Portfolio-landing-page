@@ -4,7 +4,7 @@ import Navbar from "./Component/Header";
 import Hero from "./Component/Hero";
 import Experience from "./Component/Exp";
 import Work from "./Component/Works";
-// import Stack from "./Component/Stack";
+import Stack from "./Component/Stacks";
 import Footer from "./Component/Footer";
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
         {currentView === "work" && (
           <Work chatOpen={chatOpen} setChatOpen={setChatOpen}/>
         )}
-        {/* {currentView === "stack" && <Stack />} */}
+        {currentView === "stack" && <Stack />}
       </div>
 
       <Footer />
