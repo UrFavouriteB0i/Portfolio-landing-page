@@ -490,8 +490,6 @@ export default function Stacks({ chatOpen, setChatOpen }) {
     >
       {/* ── CSS animations for node drift ── */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
-
         @keyframes stackFadeUp {
           from { opacity: 0; transform: translateY(24px); }
           to { opacity: 1; transform: translateY(0); }
