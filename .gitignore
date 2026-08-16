@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+*.env
+*/venv
+
+# Python / Backend
+ai-chatbot/chroma_db/
+ai-chatbot/__pycache__/
+ai-chatbot/rag/__pycache__/
+ai-chatbot/guardrails/__pycache__/
+ai-chatbot/.env

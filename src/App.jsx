@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./Component/Header";
 import Hero from "./Component/Hero";
@@ -6,10 +6,17 @@ import Experience from "./Component/Exp";
 import Work from "./Component/Works";
 import Stack from "./Component/Stacks";
 import Footer from "./Component/Footer";
+import ChatPanel from "./Component/ChatPanel";
+import API_URL from "./config";
 
 function App() {
   const [chatOpen, setChatOpen] = useState(false);
   const [currentView, setCurrentView] = useState("profile");
+
+  // Pre-warm Render backend on page load so chatbot is instant
+  useEffect(() => {
+    fetch(`${API_URL}/health`).catch(() => {});
+  }, []);
 
   return (
     <div
@@ -31,18 +38,17 @@ function App() {
 
       {/* Main Content Area */}
       <div style={{ flex: 1, width: "100%" }}>
-        {currentView === "profile" && (
-          <Hero chatOpen={chatOpen} setChatOpen={setChatOpen} />
-        )}
-        
-        {currentView === "experience" && (
-          <Experience chatOpen={chatOpen} setChatOpen={setChatOpen}/>
-        )}
-        {currentView === "work" && (
-          <Work chatOpen={chatOpen} setChatOpen={setChatOpen}/>
-        )}
+        {currentView === "profile" && <Hero />}
+        {currentView === "experience" && <Experience />}
+        {currentView === "work" && <Work />}
         {currentView === "stack" && <Stack />}
       </div>
+
+      {/* Chat panel — fixed position, works across all views */}
+      <ChatPanel
+        isOpen={chatOpen}
+        onClose={() => setChatOpen(false)}
+      />
 
       <Footer />
     </div>

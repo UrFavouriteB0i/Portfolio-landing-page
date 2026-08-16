@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "name": "Zhilaan Abdurrasyid Rusmawan",
+    "role": "AI Software Engineer",
+    "location": "Jakarta, Indonesia",
+    "email": "zhilaanabdrsyd@gmail.com",
+    "portfolio": "zhilaan-rusmawan-portfolio.vercel.app",
+    "github": "UrFavouriteB0i"
+  },
+  "about": {
+    "summary": "As an AI engineer, I thrive on the intricate dance between logic and creativity. Currently immersed in the ever-evolving world of Artificial Intelligence, my expertise centers around Python, JS and C++ where I applied my theoretical knowledge and practical skills to cutting-edge technologies.",
+    "detailed": "I build AI systems that ship. Over the past 1.5 years as an Applied AI Engineer, I've designed production LLM pipelines, multimodal generation platforms, and evaluation workflows, reducing latency by 30% and generation costs by 28% on live systems serving thousands of users. My background spans computer vision, edge inference, and enterprise deployment, with a consistent focus on making AI reliable and measurable in production.",
+    "passion": "I'm passionate about building AI that actually works in production - not just demo-grade, but enterprise-grade. From multimodal pipelines to edge inference on ESP32 microcontrollers, I love the challenge of making AI systems reliable, efficient, and shippable."
+  },
+  "current_role": {
+    "title": "AI Software Engineer",
+    "company": "Videfly",
+    "period": "Jan 2025 - Present",
+    "location": "Jakarta, Indonesia",
+    "achievements": [
+      "Architected Kafka-based AI generation platform processing ~1,000 jobs/day (peak 1,400+) for 2,500 MAU.",
+      "Built customer-facing AI assistant with RAG, MCP, LLM function-calling - 500+ daily users.",
+      "Reduced generation time from 5-7 min to 1-2 min (3-4x throughput improvement).",
+      "Cut monthly AI infrastructure costs by 25% via token audits and model selection optimization.",
+      "Eliminated job-loss failures using Redis-based sync (from ~10 lost jobs/day to near-zero).",
+      "Engineered multimodal evaluation pipelines ingesting TikTok, IG, FB, Reels content.",
+      "Built prompt-governance frameworks and AI Try-On workflows (reduced 5 steps to 2).",
+      "Contributed to closing 15+ enterprise contracts across FMCG, Pharmacy, Tourism verticals.",
+      "Mentored AI Engineer intern over 6 months."
+    ],
+    "products": ["AI Advertisement", "AI UGC", "AI Canvas"],
+    "stack": ["Python", "FastAPI", "Kafka", "Redis", "AWS", "GCP", "LangGraph", "LangChain", "Amazon Bedrock", "Gemini", "Docker"]
+  },
+  "experience": [
+    {
+      "title": "AI Solutions Engineer",
+      "type": "Contract",
+      "period": "Jun 2024 - Jan 2025",
+      "achievements": [
+        "Quantized ResNet on ESP32 (520KB SRAM) for real-time edge inference, 87% accuracy.",
+        "Delivered IoT CV monitoring + retail surveillance platform for MSME clients."
+      ],
+      "stack": ["Python", "PyTorch", "ONNX", "ESP32", "Computer Vision"]
+    },
+    {
+      "title": "ML Engineer Intern",
+      "company": "Festo Indonesia",
+      "period": "Feb - Aug 2023",
+      "achievements": [
+        "CNN-based CV models for industrial visual analysis and automated sorting."
+      ],
+      "stack": ["Python", "TensorFlow", "Computer Vision"]
+    },
+    {
+      "title": "Robotics Engineer Intern",
+      "company": "PT. AWG",
+      "period": "Jun 2022 - Aug 2023",
+      "achievements": [
+        "AGV control systems (C++/C#), MODBUS integration, sensor fusion."
+      ],
+      "stack": ["C++", "C#", "ROS", "MODBUS"]
+    }
+  ],
+  "education": {
+    "degree": "B.Eng Robotics & AI",
+    "university": "Universitas Airlangga",
+    "period": "2020 - 2024",
+    "gpa": "3.61/4.00",
+    "honors": true,
+    "thesis": "Automated Defect Inspection System using computer vision"
+  },
+  "skills": {
+    "core_ai_ml": ["LLM orchestration", "RAG", "MCP", "LangGraph", "LangChain", "Prompt Engineering", "Agentic Workflows"],
+    "deep_learning": ["PyTorch", "TensorFlow", "Computer Vision", "Edge AI", "TinyML"],
+    "backend": ["Python", "FastAPI", "Kafka", "Redis", "PostgreSQL", "Docker"],
+    "cloud": ["AWS", "GCP"],
+    "hardware": ["C++", "ESP32", "ONNX"],
+    "robotics": ["ROS", "MODBUS"],
+    "languages": ["Python (90%)", "C++ (35%)", "JavaScript"]
+  },
+  "projects": [
+    {
+      "name": "AI Ads Video Pipeline",
+      "type": "Platform Feature - Videfly",
+      "description": "Distributed video-ad generation pipeline processing 1,000+ jobs/day (peak 1,400+) - cut generation time 5-7 min to 1-2 min, a 3-4x throughput gain, after redesigning the Kafka/LangGraph orchestration layer.",
+      "problem": "Creating high-converting ads manually takes hours. The platform needed an asynchronous, fault-tolerant pipeline to generate video ads at scale without dropping jobs.",
+      "solution": "Architected a distributed system using Kafka for message brokering, LangGraph for multi-step generation orchestration, and FastAPI microservices, with assets and job state split across AWS S3, Firebase RTDB, and Firebase Storage. Redis-based synchronization eliminated generation-tracking failures, taking job loss from ~10/day to near-zero.",
+      "stack": ["Kafka", "LangGraph", "Redis", "FastAPI", "AWS S3", "Firebase RTDB", "Firebase Storage"]
+    },
+    {
+      "name": "AI Auto Clipper",
+      "type": "Platform Feature - Videfly",
+      "description": "Multimodal highlight-extraction pipeline - ElevenLabs STT, MediaPipe, RetinaFace, and PySceneDetect combine to auto-clip long-form video into high-retention short-form media.",
+      "problem": "Users were spending hours manually scrubbing through long-form videos to find engaging moments for TikTok and Reels.",
+      "solution": "Engineered a multimodal pipeline combining ElevenLabs for speech-to-text transcript alignment, MediaPipe and RetinaFace for face-priority visual framing, and PySceneDetect for scene-boundary segmentation to automatically identify and crop the most engaging segments.",
+      "stack": ["ElevenLabs STT", "MediaPipe", "RetinaFace", "PySceneDetect"]
+    },
+    {
+      "name": "AI UGC Pipeline",
+      "type": "Platform Feature - Videfly",
+      "description": "LLM + VLM generation pipeline for on-brand UGC video, backed by AWS S3 and PostgreSQL - cut manual evaluation steps from 5 to 2.",
+      "problem": "Users needed authentic-looking UGC videos that align with brand guidelines without hallucinating product features.",
+      "solution": "Built an LLM + VLM pipeline with prompt-governance and object-referencing for multi-angle consistency, storing generated assets in AWS S3 and metadata in PostgreSQL.",
+      "stack": ["LLMs", "VLM", "AWS S3", "PostgreSQL"]
+    },
+    {
+      "name": "AI Post Analytics Pipeline",
+      "type": "Platform Feature - Videfly",
+      "description": "Real-time ingestion of scraped social metrics (browser-use agent) into an LLM context window for plain-text strategic recommendations, backed by PostgreSQL.",
+      "problem": "Brands were overwhelmed by raw engagement data across multiple platforms and struggled to extract actionable marketing insights.",
+      "solution": "Built a browser-use agent to ingest platform metrics from TikTok, Instagram, and Facebook, feeding structured data into an LLM context window and generating plain-text strategic recommendations.",
+      "stack": ["PostgreSQL", "LLMs", "FastAPI", "browser-use"]
+    },
+    {
+      "name": "AGV Control Systems",
+      "type": "Robotics - PT. AWG",
+      "description": "Vision-based triangulation and wheel-odometry fusion for GPS-denied indoor navigation, with MODBUS integration for PLC communication.",
+      "problem": "Automated Guided Vehicles required robust indoor navigation without relying on GPS, functioning in highly dynamic warehouse environments.",
+      "solution": "Engineered vision-based triangulation combined with wheel odometry for localized navigation. Integrated MODBUS protocols to link raw machine hardware registers with backend telemetry servers.",
+      "stack": ["C++", "ROS", "Vision Triangulation", "MODBUS"]
+    },
+    {
+      "name": "Smart Feline Feeder",
+      "type": "Embedded Hardware",
+      "description": "Custom IoT device running an ONNX-quantized model on-device to feed registered pets and deter feral cats via Telegram alerts.",
+      "problem": "Feral cats were stealing food meant for house pets. Cloud inference was too slow and expensive for a simple feeder.",
+      "solution": "Deployed an ONNX-quantized model directly onto an ESP32 microcontroller for edge inference. Connected to the Telegram API to send real-time snapshot alerts when a feral cat is detected.",
+      "stack": ["ESP32", "ONNX", "Telegram API"]
+    },
+    {
+      "name": "Retail Edge CCTV Surveillance",
+      "type": "Computer Vision",
+      "description": "Cost-effective, edge-inference surveillance platform for construction material stores - ONNX/PyTorch models quantized for 520KB-SRAM ESP32 inference, no cloud dependency.",
+      "problem": "MSME retail stores needed automated surveillance, but standard cloud-based CV solutions were too bandwidth-heavy and expensive.",
+      "solution": "Quantized ResNet models to ONNX and deployed them to run entirely on heavily constrained 520KB SRAM microcontrollers (ESP32). Delivered real-time local inference without cloud dependency.",
+      "stack": ["ESP32", "ONNX", "PyTorch", "C++"]
+    },
+    {
+      "name": "Industrial Smart Sorting",
+      "type": "Machine Learning - Festo",
+      "description": "Developed CNN models for high-speed industrial visual analysis and automated defect detection.",
+      "problem": "Traditional optical sensors on the production line were failing to detect nuanced surface defects, leading to QA bottlenecks.",
+      "solution": "Developed and trained Convolutional Neural Network (CNN) models for high-speed industrial visual analysis, drastically improving defect detection accuracy and streamlining the automated sorting process.",
+      "stack": ["TensorFlow", "Computer Vision", "GCP"]
+    }
+  ],
+  "achievements": {
+    "metrics": [
+      "1,000+ jobs/day processed (peak 1,400+)",
+      "2,500 MAU on production platform",
+      "500+ daily users on AI assistant",
+      "3-4x throughput improvement (5-7 min to 1-2 min)",
+      "25% monthly AI cost reduction",
+      "15+ enterprise contracts closed",
+      "87% accuracy on edge inference (ESP32)",
+      "Near-zero job loss (from ~10/day)",
+      "502KB SRAM constraint for ESP32 inference"
+    ],
+    "highlights": [
+      "Designed production LLM pipelines serving thousands of users",
+      "Reduced latency by 30% and generation costs by 28%",
+      "Cut manual evaluation steps from 5 to 2",
+      "Mentored AI Engineer intern over 6 months"
+    ]
+  },
+  "contact": {
+    "email": "zhilaanabdrsyd@gmail.com",
+    "portfolio": "zhilaan-rusmawan-portfolio.vercel.app",
+    "github": "https://github.com/UrFavouriteB0i"
+  }
+}
