@@ -13,9 +13,9 @@ function App() {
   const [chatOpen, setChatOpen] = useState(false);
   const [currentView, setCurrentView] = useState("profile");
 
-  // Pre-warm Render backend on page load so chatbot is instant
+  // Pre-warm HF Space on page load so chatbot is instant
   useEffect(() => {
-    fetch(`${API_URL}/health`).catch(() => {});
+    fetch(`${API_URL}/info`).catch(() => {});
   }, []);
 
   return (
