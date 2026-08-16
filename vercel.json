@@ -8,9 +8,7 @@
     "api/index.py": {
       "runtime": "@vercel/python",
       "maxDuration": 30,
-      "includeFiles": [
-        "ai-chatbot/rag/portfolio_data.json"
-      ]
+      "includeFiles": "ai-chatbot/rag/**"
     }
   },
   "routes": [
