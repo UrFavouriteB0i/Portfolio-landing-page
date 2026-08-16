@@ -31,3 +31,9 @@ ai-chatbot/__pycache__/
 ai-chatbot/rag/__pycache__/
 ai-chatbot/guardrails/__pycache__/
 ai-chatbot/.env
+
+# Vercel
+.vercel/
+
+# Claude
+.claude/

@@ -1,0 +1,17 @@
+# Ignore heavy ai-chatbot files NOT needed by serverless function
+ai-chatbot/server.py
+ai-chatbot/app.py
+ai-chatbot/render.yaml
+ai-chatbot/setup.sh
+ai-chatbot/test_guardrails.py
+ai-chatbot/DEPLOYMENT.md
+ai-chatbot/QUICK_REFERENCE.md
+ai-chatbot/README.md
+ai-chatbot/.env.example
+ai-chatbot/requirements.txt
+ai-chatbot/guardrails/__pycache__/
+ai-chatbot/rag/__pycache__/
+ai-chatbot/__pycache__/
+ai-chatbot/chroma_db/
+node_modules/
+.git/

@@ -30,26 +30,17 @@ export default function ChatPanel({ isOpen, onClose }) {
     setLoading(true);
 
     try {
-      // Call Gradio's /api/predict endpoint
-      // Gradio expects history as [[user, bot], ...] tuples
-      const historyPairs = [];
-      for (let i = 0; i < messages.length; i += 2) {
-        historyPairs.push([
-          messages[i]?.content || null,
-          messages[i + 1]?.content || null,
-        ]);
-      }
-
-      const res = await fetch(`${API_URL}/predict`, {
+      const res = await fetch(`${API_URL}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          data: [userMsg, historyPairs],
+          message: userMsg,
+          history: messages,
         }),
       });
       const result = await res.json();
-      // Gradio returns { data: [response_text] }
-      const reply = result.data?.[0] || "Something went wrong. Try again.";
+      // API returns { response: string, blocked: boolean }
+      const reply = result.response || "Something went wrong. Try again.";
       setMessages((prev) => [
         ...prev,
         { role: "assistant", content: reply },
