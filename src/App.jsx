@@ -38,7 +38,7 @@ function App() {
 
       {/* Main Content Area */}
       <div style={{ flex: 1, width: "100%" }}>
-        {currentView === "profile" && <Hero />}
+        {currentView === "profile" && <Hero onExploreWork={() => setCurrentView("work")} />}
         {currentView === "experience" && <Experience />}
         {currentView === "work" && <Work />}
         {currentView === "stack" && <Stack />}

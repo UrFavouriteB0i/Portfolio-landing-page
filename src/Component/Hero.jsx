@@ -255,7 +255,7 @@ function StatsStrip() {
    HERO SECTION — Main export
    ───────────────────────────────────────────── */
 
-export default function Hero() {
+export default function Hero({ onExploreWork }) {
   return (
     <section id="profile">
       <div
@@ -431,8 +431,9 @@ export default function Hero() {
                 flexWrap: "wrap",
               }}
             >
-              <a
-                href="#work"
+              <button
+                type="button"
+                onClick={onExploreWork}
                 className="hero-cta-primary"
                 style={{
                   display: "inline-flex",
@@ -446,6 +447,7 @@ export default function Hero() {
                   fontFamily: "'Inter', system-ui, sans-serif",
                   fontWeight: 500,
                   fontSize: 14,
+                  cursor: "pointer",
                   textDecoration: "none",
                 }}
               >
@@ -454,7 +456,7 @@ export default function Hero() {
                   <path d="M12 5v14" />
                   <path d="M19 12l-7 7-7-7" />
                 </svg>
-              </a>
+              </button>
               <a
                 href="https://github.com/UrFavouriteB0i"
                 target="_blank"
