@@ -76,6 +76,22 @@ export default function ChatPanel({ isOpen, onClose }) {
         }
       `}</style>
 
+      {/* Backdrop overlay for mobile & click outside */}
+      <div
+        onClick={onClose}
+        style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 998,
+          background: "rgba(0,0,0,0.5)",
+          backdropFilter: "blur(4px)",
+          WebkitBackdropFilter: "blur(4px)",
+          opacity: isOpen ? 1 : 0,
+          pointerEvents: isOpen ? "auto" : "none",
+          transition: "opacity 0.35s ease",
+        }}
+      />
+
       <div
         style={{
           position: "fixed",
@@ -83,10 +99,10 @@ export default function ChatPanel({ isOpen, onClose }) {
           right: 0,
           bottom: 0,
           width: "min(400px, 92vw)",
-          zIndex: 99,
+          zIndex: 999,
           backdropFilter: "blur(24px) saturate(1.3)",
           WebkitBackdropFilter: "blur(24px) saturate(1.3)",
-          background: "rgba(11,15,23,0.88)",
+          background: "rgba(11,15,23,0.92)",
           borderLeft: "1px solid rgba(255,255,255,0.06)",
           display: "flex",
           flexDirection: "column",

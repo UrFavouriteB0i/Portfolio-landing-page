@@ -110,6 +110,7 @@ export default function Navbar({ onChatToggle, chatOpen, currentView, setCurrent
           background: "rgba(11,15,23,0.6)", backdropFilter: "blur(16px)",
           WebkitBackdropFilter: "blur(16px)", alignItems: "center", justifyContent: "center",
           cursor: "pointer", color: "#E2E8F0", padding: 0,
+          display: chatOpen ? "none" : undefined,
         }}
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
