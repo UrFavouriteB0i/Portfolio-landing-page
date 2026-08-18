@@ -8,8 +8,8 @@ const experienceData = [
     role: "AI Software Engineer",
     date: "Jan 2025 — Present",
     summary:
-      "Own a Kafka-based multimodal generation platform serving 2,500 MAU at ~1,000 jobs/day (peak 1,400+). Cut generation time from 5-7 min to 1-2 min (3-4x throughput), reduced infra costs 25% via token audits and model optimization, and near-zero'd job loss with Redis state sync. Built a customer-facing AI assistant with RAG and MCP used by 500+ daily users, and contributed to 15+ enterprise deals across FMCG, pharma, and tourism verticals.",
-    skills: ["Python", "FastAPI", "Kafka", "Redis", "LangGraph", "AWS", "Kubernetes", "GCP"],
+      "Architected and deployed Videfly’s core AI platform on AWS and Kubernetes, orchestrating multimodal LLM, image, and video models to power high-volume generative content workflows. Redesigned media pipelines around parallel execution and agentic workflows, cutting generation times from 5–7 minutes down to 2–3 minutes. Optimized LLM token usage, prompt strategies, and model selection to slash operational costs, while engineering state-sync mechanisms to ensure zero generation failures. Shipped customer-facing AI assistants with RAG and Model Context Protocol (MCP) integrations, and spearheaded technical solution design that helped secure enterprise clients across major commercial sectors",
+      skills: ["Python", "FastAPI", "Kafka", "Redis", "LangGraph", "AWS", "Kubernetes", "GCP"],
     image:
       "https://ipis.ui.ac.id/storage/product_images/xFN612if8ZoXm8Zyuad8WyI5oGZ4sfDYIQuKvEQJ.png",
   },
@@ -214,102 +214,180 @@ function ReactiveWaveCanvas() {
 }
 
 /* ── Experience Card ── */
-function ExperienceCard({ data, index }) {
-  const [isHovered, setIsHovered] = useState(false);
+function AccordionCard({ data, isExpanded, onHover }) {
   return (
-    <div
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+    <motion.div
+      onMouseEnter={onHover}
+      layout
+      initial={false}
+      animate={{
+        flex: isExpanded ? 4 : 1,
+      }}
+      transition={{ type: "spring", stiffness: 200, damping: 25 }}
       style={{
         position: "relative",
-        width: "clamp(340px, 40vw, 500px)",
-        height: "clamp(450px, 50vh, 600px)",
-        marginTop: `${index * 25}vh`,
+        height: "75vh",
+        minWidth: 0,
         borderRadius: 24,
         background: "rgba(255,255,255,0.01)",
         border: "1px solid rgba(255,255,255,0.04)",
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between",
-        padding: 40,
+        justifyContent: "flex-end",
         boxSizing: "border-box",
-        transition: "border-color 0.4s ease",
-        flexShrink: 0,
+        cursor: "pointer",
       }}
-      onMouseOver={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)")}
-      onMouseOut={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.04)")}
     >
-      <div style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0, opacity: 0.8 }}>
-        <img src={data.image} alt={data.company} style={{ width: "100%", height: "100%", objectFit: "cover", filter: "contrast(120%)" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(11,15,23,0.8), rgba(11,15,23,0.95))" }} />
+{/* Background Image */}
+      <div style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0, overflow: "hidden" }}>
+        <img
+          src={data.image}
+          alt={data.company}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            filter: "grayscale(100%) contrast(110%) brightness(60%)",
+            transition: "filter 0.4s ease, transform 0.4s ease",
+            transform: isExpanded ? "scale(1.05)" : "scale(1)",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: isExpanded
+              ? "linear-gradient(to top, rgba(11,15,23,0.95) 0%, rgba(11,15,23,0.7) 50%, rgba(11,15,23,0.4) 100%)"
+              : "rgba(11,15,23,0.75)",
+            transition: "background 0.4s ease",
+          }}
+        />
       </div>
-      <div style={{ position: "relative", zIndex: 1 }}>
-        <h3 style={{ fontFamily: "'Space Grotesk', system-ui", fontWeight: 600, fontSize: "clamp(1.5rem, 2vw, 2rem)", color: "#F8FAFC", margin: "0 0 8px 0", letterSpacing: "-0.02em" }}>
-          {data.company}
-        </h3>
-        <p style={{ fontFamily: "'Inter', system-ui", fontWeight: 500, fontSize: "1rem", color: "#94A3B8", margin: 0 }}>
-          {data.role}
-        </p>
-      </div>
-      <div style={{ position: "relative", zIndex: 1 }}>
-        <span style={{ fontFamily: "'Inter', system-ui", fontWeight: 400, fontSize: "0.875rem", color: "#64748B", textTransform: "uppercase" }}>
-          {data.date}
-        </span>
-      </div>
-      <AnimatePresence>
-        {isHovered && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+
+      {/* Content Container */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 1,
+          height: "100%",
+          width: "100%",
+          padding: isExpanded ? "32px" : "24px 12px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: isExpanded ? "flex-end" : "center",
+          alignItems: isExpanded ? "flex-start" : "center",
+          boxSizing: "border-box",
+          gap: isExpanded ? 16 : 0,
+          transition: "padding 0.4s ease",
+        }}
+      >
+        {/* Header / Title block */}
+        {!isExpanded ? (
+          <div
             style={{
-              position: "absolute",
-              inset: 0,
-              zIndex: 10,
-              background: "rgba(11, 15, 23, 0.85)",
-              backdropFilter: "blur(24px) saturate(1.4)",
-              WebkitBackdropFilter: "blur(24px) saturate(1.4)",
-              padding: 40,
               display: "flex",
-              flexDirection: "column",
+              alignItems: "center",
               justifyContent: "center",
-              gap: 24,
+              width: "100%",
+              height: "100%",
             }}
           >
-            <p style={{ fontFamily: "'Inter', system-ui", fontWeight: 400, fontSize: "1.05rem", lineHeight: 1.6, color: "#E2E8F0", margin: 0, textAlign: "justify"}}>
-              {data.summary}
+            <h3
+              style={{
+                fontFamily: "'Space Grotesk', system-ui",
+                fontWeight: 600,
+                fontSize: "clamp(1.2rem, 1.6vw, 1.8rem)",
+                color: "#F8FAFC",
+                margin: 0,
+                writingMode: "vertical-rl",
+                transform: "rotate(180deg)",
+                whiteSpace: "nowrap",
+                letterSpacing: "0.05em",
+              }}
+            >
+              {data.company}
+            </h3>
+          </div>
+        ) : (
+          <div>
+            <h3
+              style={{
+                fontFamily: "'Space Grotesk', system-ui",
+                fontWeight: 600,
+                fontSize: "clamp(1.5rem, 2vw, 2rem)",
+                color: "#F8FAFC",
+                margin: "0 0 8px 0",
+              }}
+            >
+              {data.company}
+            </h3>
+            <p
+              style={{
+                fontFamily: "'Inter', system-ui",
+                fontWeight: 500,
+                fontSize: "1rem",
+                color: "#94A3B8",
+                margin: 0,
+              }}
+            >
+              {data.role} • {data.date}
             </p>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-              {data.skills.map((skill, i) => (
-                <SkillPill key={i} skill={skill} />
-              ))}
-            </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
-    </div>
+
+        {/* Expanded Details */}
+        <AnimatePresence>
+          {isExpanded && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              style={{ display: "flex", flexDirection: "column", gap: 20, width: "100%" }}
+            >
+              <p
+                style={{
+                  fontFamily: "'Inter', system-ui",
+                  fontWeight: 400,
+                  fontSize: "1.05rem",
+                  lineHeight: 1.6,
+                  color: "#E2E8F0",
+                  margin: 0,
+                  textAlign: "justify",
+                }}
+              >
+                {data.summary}
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                {data.skills.map((skill, i) => (
+                  <SkillPill key={i} skill={skill} />
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </motion.div>
   );
 }
 
-/* ── Experience Section ── */
 export default function Experience() {
-  const containerRef = useRef(null);
-  const rawScroll = useRef(0);
-  const handleWheel = (e) => {
-    const maxScrollLimit = (experienceData.length - 1) * 600;
-    rawScroll.current = Math.max(0, Math.min(rawScroll.current + e.deltaY * 1.2, maxScrollLimit));
-    if (containerRef.current) {
-      containerRef.current.style.transform = `translate3d(${-rawScroll.current}px, ${-rawScroll.current * 0.4}px, 0)`;
-    }
-  };
+  // Default to the first experience (Videfly) being expanded
+  const [expandedId, setExpandedId] = useState(experienceData[0].id);
+
   return (
-    <section onWheel={handleWheel} style={{ height: "100vh", width: "100vw", position: "absolute", top: 0, left: 0, overflow: "hidden", background: "#0B0F17" }}>
+    <section style={{ height: "100vh", width: "100vw", position: "absolute", top: 0, left: 0, overflow: "hidden", background: "#0B0F17", display: "flex", alignItems: "center", justifyContent: "center" }}>
       <ReactiveWaveCanvas />
-      <div ref={containerRef} style={{ display: "flex", gap: "10vw", padding: "20vh 15vw", willChange: "transform", transition: "transform 0.1s cubic-bezier(0.16, 1, 0.3, 1)" }}>
-        {experienceData.map((data, index) => (
-          <ExperienceCard key={data.id} data={data} index={index} />
+      
+      <div style={{ position: "relative", zIndex: 1, display: "flex", gap: "16px", width: "100%", maxWidth: "1200px", height: "75vh", padding: "0 24px", boxSizing: "border-box" }}>
+        {experienceData.map((data) => (
+          <AccordionCard 
+            key={data.id} 
+            data={data} 
+            isExpanded={expandedId === data.id} 
+            onHover={() => setExpandedId(data.id)} 
+          />
         ))}
       </div>
     </section>
