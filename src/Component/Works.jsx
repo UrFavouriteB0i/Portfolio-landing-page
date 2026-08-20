@@ -406,7 +406,6 @@ export default function Work() {
                   </div>
                 </div>
                 
-                {/* Changed from <button> to <div role="button"> to ignore index.css padding/bg overrides */}
                 <div 
                   role="button"
                   onClick={() => setSelectedProject(null)}
@@ -424,18 +423,6 @@ export default function Work() {
               {/* Body */}
               <div style={{ padding: 32, display: "flex", flexDirection: "column", gap: 32 }}>
                 
-                {/* Diagram Box */}
-                <div style={{ width: "100%", padding: "60px 20px", borderRadius: 16, background: "#0B0F17", border: "1px solid rgba(255,255,255,0.05)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12 }}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#475569" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                    <polyline points="21 15 16 10 5 21"></polyline>
-                  </svg>
-                  <div style={{ fontFamily: "'Inter', system-ui, sans-serif", fontSize: 14, fontWeight: 500, color: "#64748B" }}>
-                    {selectedProject.modal.diagramText}
-                  </div>
-                </div>
-
                 {/* Details Grid */}
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 32 }}>
                   <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
